@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Vis Exploratorium</title>
+    <link>/</link>
+    <description>Recent content on Data Vis Exploratorium</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 21 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Christian is a Masters student in the Systems Science Department at Portland State University. His academic interests are in machine learning, data science, statistics, and systems modeling. His current research is on Automatic Drum Transcription utilizing machine learning methods.</description>
+    </item>
+    
+    <item>
+      <title>Bar Chart With Faceting Brief</title>
+      <link>/projects/barchartfacetbrief/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/barchartfacetbrief/</guid>
+      <description>library(tidyverse)library(gapminder)library(reshape2)library(wesanderson)library(readr)How to Read it and What to look for:A bar plot is used to compare members of a category on the x axis to some common continuous measure on the y axis. This allows for easy comparison between groups. Faceting is an option which allows for display of two bar plots that you would like to compare. The same x axis and y axis variables are selected and an additional categorical variable is chosen to define the subset of the data being displayed in each graph.</description>
+    </item>
+    
+    <item>
+      <title>Dot Plot Brief</title>
+      <link>/projects/dotplotbrief/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/dotplotbrief/</guid>
+      <description>How to Read it and What to look forThe dot plot is a type of graph used to display the distribution of a continuous variable, often grouping by category. To read a dot plot , the reader should look for how mass is distributed along the plot. This indicates the frequency of observations at the corresponding value.
+Example:#Spread of countries gdp by continentgap_country &amp;lt;- gapminder %&amp;gt;% group_by(continent, country, year) %&amp;gt;% filter(year == &amp;quot;2007&amp;quot;)ggplot(gap_country,aes(x = continent, y = gdpPercap, fill = continent ))+geom_dotplot(binwidth = .</description>
+    </item>
+    
+    <item>
+      <title>Side By Side Barchart</title>
+      <link>/projects/sidebysidebarchart/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/sidebysidebarchart/</guid>
+      <description>library(tidyverse)library(gapminder)library(reshape2)library(wesanderson)How to Read it and What to look for:The side by side bar chart is used to vizualize multiple categorical variables and a continuous variable simultaneously. The continuous variable is diplayed on the common y axis to enable comparison. A categorical variable is displayed on the x axis and another categorical variable is used to define what the side by side bars represent.
+Data:This example uses the gapminder dataset which details global gross domestic product.</description>
+    </item>
+    
+    <item>
+      <title>Violin Plot Brief</title>
+      <link>/projects/violinplotbrief/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/violinplotbrief/</guid>
+      <description>library(tidyverse)library(gapminder)library(reshape2)library(wesanderson)library(readr)How to Read it and What to look for:A violin plot is used to display a distribution of a variable often split up across mulitple levels of a category for comparison purposes. The mass is displayed in an appealing symmetrical refelction resembling a violin.
+Data:This example uses the gapminder dataset which details global gross domestic product. The dataset contains measures of gdp by country and continent over time.</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>/projects/projects/</link>
+      <pubDate>Wed, 19 Aug 2015 20:29:37 -0700</pubDate>
+      
+      <guid>/projects/projects/</guid>
+      <description>slides for my final presentation.</description>
+    </item>
+    
+    <item>
+      <title>Home</title>
+      <link>/home/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/home/</guid>
+      <description>Welcome! This site is an e-portfolio comprised of my sample work from CS631: Principles of Data Visualization. Please explore some of the visualization examples by clicking the projects link.</description>
+    </item>
+    
+    <item>
+      <title>License</title>
+      <link>/license/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/license/</guid>
+      <description>You can use this page to put a license on the contents of your blog, like so:
+ The MIT License (MIT)
+Copyright &amp;copy; 2015 Nishanth Shanmughamnishanth.gerrard@gmail.com
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;ldquo;Software&amp;rdquo;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</description>
+    </item>
+    
+  </channel>
+</rss>

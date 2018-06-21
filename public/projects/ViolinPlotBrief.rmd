@@ -1,0 +1,76 @@
+---
+title: "Violin Plot Brief" 
+subtitle: ""
+author: "Christian Hower"
+date: '2018-06-20'
+output: 
+  html_document:
+    theme: spacelab
+    highlight: monochrome
+    toc: false
+    toc_float: true
+    toc_depth: 4
+    #code_folding: hide
+    css: styles.css
+--- 
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, message = FALSE, warning = FALSE}
+library(tidyverse)
+library(gapminder)
+library(reshape2)
+library(wesanderson)
+library(readr)
+```
+
+
+
+### <span style="color:black">How to Read it and What to look for:</span>
+A violin plot is used to display a distribution of a variable often split up across mulitple levels of a category for comparison purposes. The mass is displayed in an appealing symmetrical refelction resembling a violin. 
+
+### <span style="color:black">Data:</span>
+This example uses the gapminder dataset which details global gross domestic product. The dataset contains measures of gdp by country and continent over time. This dataset can be found at [gapminder.org](https://www.gapminder.org/data/)
+
+### <span style="color:black">Example:</span>
+
+```{r echo = FALSE, warning=FALSE, message=FALSE}
+gap_country <- gapminder %>% group_by(continent, country, year) %>% filter(year == "2007")
+```
+
+
+
+```{r, message = FALSE, warning = FALSE, echo = FALSE}
+#Spread of countries gdp by continent
+
+ggplot(gap_country,aes(x = continent, y = gdpPercap, fill = continent ))+
+  geom_violin()+
+  labs(x = "Continent", y = "GDP Per Capita",
+       title = "Distribution of GDP Per Capita in 2007 by Continent")+
+      scale_fill_discrete(name = "")
+```     
+
+
+### <span style="color:black">Representation Description:</span>
+This plot shows the distribution of GDP per capita by continent. Minimum and maximum values can be understood by looking at the length of the plots. Skew and density conveys information about each continent. 
+
+
+### <span style="color:black">Presentation Tips:</span>
+
+* **Annotation:** Annotation can be useful to show outliers or call out some critical values that might be of interest to the reader. 
+
+* **Color:** Color is useful for encoding categories on violin plots. Although levels of a category will likely be displayed one axis, colors can be a nice way to reinforce the seperation. 
+
+* **Composition:** One important property of violin plots is that they will show mass where no observations have been made based on some smoothing process. This is nice for creating some notion of a shape but it can also be misleading in some instances. 
+ 
+### <span style="color:black">Variations and Alternatives:</span>
+
+Histograms, ridge plots and beeswarm plots are other common ways to represent a distribution. The violin offers a unique aesthetic and symmetrical look that may be appealing when a more broad description of the data distributions are desired. 
+
+### <span style="color:black">Methods:</span>
+
+To generate this plot I used grouped countries by continent and then plotted the distribtutions. I added color to draw more distinction between the groups and added a caption to expess some insights. 
+

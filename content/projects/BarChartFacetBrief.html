@@ -1,0 +1,55 @@
+---
+title: "Bar Chart With Faceting Brief"
+subtitle: ""
+author: "Christian Hower"
+date: '2018-06-20'
+output: 
+  html_document:
+    theme: spacelab
+    highlight: monochrome
+    toc: false
+    toc_float: true
+    toc_depth: 4
+    #code_folding: hide
+    css: styles.css
+--- 
+
+
+
+<pre class="r"><code>library(tidyverse)
+library(gapminder)
+library(reshape2)
+library(wesanderson)
+library(readr)</code></pre>
+<div id="how-to-read-it-and-what-to-look-for" class="section level3">
+<h3><span style="color:black">How to Read it and What to look for:</span></h3>
+<p>A bar plot is used to compare members of a category on the x axis to some common continuous measure on the y axis. This allows for easy comparison between groups. Faceting is an option which allows for display of two bar plots that you would like to compare. The same x axis and y axis variables are selected and an additional categorical variable is chosen to define the subset of the data being displayed in each graph.</p>
+</div>
+<div id="data" class="section level3">
+<h3><span style="color:black">Data:</span></h3>
+<p>This example uses the gapminder dataset which details global gross domestic product. The dataset contains measures of gdp by country and continent over time. This dataset can be found at <a href="https://www.gapminder.org/data/">gapminder.org</a></p>
+</div>
+<div id="example" class="section level3">
+<h3><span style="color:black">Example:</span></h3>
+<p><img src="/projects/BarChartFacetBrief_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="representation-description" class="section level3">
+<h3><span style="color:black">Representation Description:</span></h3>
+<p>This plot shows the distributions of the average size of paintings acquired by the MOMA by year, seperated by the means of acquisition i.e., whether the paintings were purchased or gifted to the MOMA. The distribution of mass is similar in both plots indictating that there is not necessarily a pattern to the size of gifts to the MOMA. We can also see that for most years, the average pating size was less than approximately 3 sq meters. The MOMA does have larger works in its collection but there are fewer of them.</p>
+</div>
+<div id="presentation-tips" class="section level3">
+<h3><span style="color:black">Presentation Tips:</span></h3>
+<ul>
+<li><p><strong>Annotation:</strong> Annotation can be used to supplement the graph with summary statistics and to describe qualitative features of the distribution such as skew. The language here should be used to enhance the visual information by pointing out inferences and conclusions that can be drawn from the graph.</p></li>
+<li><p><strong>Color:</strong> Color is usually used for encoding categories. However, the categories of interest are already sivided into different plots thus there is limited use for color. One idea would be to select a color that coheres with the theme of the topic.</p></li>
+<li><p><strong>Composition:</strong> It is important to have a common scale for the y axis to enable comparison. Many levels of a category can be displayed simultaneously for broader comparisons. A sesible ordering should be selecting for the x axis categories. Sorting by max values, creating heirarchy, or remaining consistent with conventional representations of categories can all improve a graph.</p></li>
+</ul>
+</div>
+<div id="variations-and-alternatives" class="section level3">
+<h3><span style="color:black">Variations and Alternatives:</span></h3>
+<p>Side by side bar charts can be selected instead of facetting when the number of variables is small. This is similar to laying two facet graphs onto the same x axis and can ebable use of color. However, facetting will be more effective in instances when many levels of a factor are being displayed.</p>
+</div>
+<div id="methods" class="section level3">
+<h3><span style="color:black">Methods:</span></h3>
+<p>To create this plot I filtered the data for a specific year of interest, 2007. Then I found the maximum and minimum gdp per capita values by continent in order to create a new variable that indicates whether the observation is the minimum or maximum for a given continent. This syubset of the data was used in a geom_col() function call since the summary stastics where already computed. I improved the theme, and provided labels and a summary caption.</p>
+</div>

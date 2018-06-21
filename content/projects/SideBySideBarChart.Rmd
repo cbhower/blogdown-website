@@ -1,0 +1,70 @@
+---
+title: "Side By Side Barchart" 
+subtitle: ""
+author: "Christian Hower"
+date: '2018-06-20'
+output: 
+  html_document:
+    theme: spacelab
+    highlight: monochrome
+    toc: false
+    toc_float: true
+    toc_depth: 4
+    #code_folding: hide
+    css: styles.css
+--- 
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, message = FALSE, warning = FALSE}
+library(tidyverse)
+library(gapminder)
+library(reshape2)
+library(wesanderson)
+```
+
+
+
+### <span style="color:black">How to Read it and What to look for:</span>
+The side by side bar chart is used to vizualize multiple categorical variables and a continuous variable simultaneously. The continuous variable is diplayed on the common y axis to enable comparison. A categorical variable is displayed on the x axis and another categorical variable is used to define what the side by side bars represent.
+
+### <span style="color:black">Data:</span>
+This example uses the gapminder dataset which details global gross domestic product. The dataset contains measures of gdp by country and continent over time. This dataset can be found at [gapminder.org]("https://www.gapminder.org/data/")
+
+### <span style="color:black">Example:</span>
+
+```{r, message = FALSE, warning = FALSE, echo = FALSE}
+# Max and Min
+gapMinMax <- gapminder %>% filter(year == "2007") %>% group_by(continent) %>% summarise(max = max(gdpPercap), min = min(gdpPercap)) %>% melt()
+```
+
+```{r}
+ggplot(gapMinMax, aes(x = continent, y = value, fill = factor(variable)))+
+  geom_col(aes(fill = variable), colour = "white",position="dodge")+
+  labs(title = "Minimum and Maximum GDP in 2007", x = "", y = "GDP/Capita")+
+  scale_fill_manual(name = "",
+                    values = wes_palette("Moonrise2")[1:3])
+```
+
+
+### <span style="color:black">Representation Description:</span>
+This plot shows the minimum and maximum values of GDP per capita by continent. This type graph makes it easy to quickly see what the minimum and maximum values are for each level of the x axis category as well as how values compare accross levels.
+
+### <span style="color:black">Presentation Tips:</span>
+
+* **Annotation:** Annotation can be useful to show outliers or call out some critical values that might be of interest to the reader.
+
+* **Color:** Color is useful for encoding the category that is selected to divide the side by side bars.
+
+* **Composition:** The variable chosen to represent the side by side bvars for each category should have only a few levels. Too many levels will hinder readability.
+ 
+### <span style="color:black">Variations and Alternatives:</span>
+
+Facet wrapped bar plots are a good alternative when more variables are desired for comparison.  
+
+### <span style="color:black">Methods:</span>
+
+To generate this plot I computed summary statistics for the year 2007. I created a minimum and maximum variable which I used to split the bars in the graph.

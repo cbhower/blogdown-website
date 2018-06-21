@@ -1,0 +1,49 @@
+---
+title: "Dot Plot Brief" 
+subtitle: ""
+author: "Christian Hower"
+date: '2018-06-20'
+output: 
+  html_document:
+    theme: spacelab
+    highlight: monochrome
+    toc: false
+    toc_float: true
+    toc_depth: 4
+    #code_folding: hide
+    css: styles.css
+--- 
+
+
+
+<div id="how-to-read-it-and-what-to-look-for" class="section level3">
+<h3><span style="color:black">How to Read it and What to look for</span></h3>
+<p>The dot plot is a type of graph used to display the distribution of a continuous variable, often grouping by category. To read a dot plot , the reader should look for how mass is distributed along the plot. This indicates the frequency of observations at the corresponding value.</p>
+</div>
+<div id="example" class="section level3">
+<h3><span style="color:black">Example:</span></h3>
+<pre class="r"><code>#Spread of countries gdp by continent
+gap_country &lt;- gapminder %&gt;% group_by(continent, country, year) %&gt;% filter(year == &quot;2007&quot;)
+
+ggplot(gap_country,aes(x = continent, y = gdpPercap,  fill = continent ))+
+  geom_dotplot(binwidth = .01, aes(fill = continent))+
+  geom_dotplot(binaxis = &quot;y&quot;, stackdir = &quot;center&quot;)+
+  labs(x = &quot;Continent&quot;, y = &quot;GDP Per Capita&quot;,
+       title = &quot;Distribution of GDP Per Capita in 2007 by Continent&quot;,
+       caption = &quot;Many countries are still behind in per capita income.&quot;)+
+  scale_fill_discrete(name = &quot;&quot;)</code></pre>
+<p><img src="/projects/DotPlotBrief_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="data" class="section level3">
+<h3><span style="color:black">Data</span></h3>
+<p>This example uses the gapminder dataset which details global gross domestic product. The dataset contains measures of gdp by country and continent over time. This dataset can be found at <a href="%22https://www.gapminder.org/data/%22">gapminder.org</a></p>
+</div>
+<div id="presentation-tips" class="section level3">
+<h3><span style="color:black">Presentation Tips</span></h3>
+<ul>
+<li><p><strong>Interactivity:</strong> One interactive feature that could be useful is to display information about a point while hovering over it.</p></li>
+<li><p><strong>Annotation:</strong> Annotation can be used to identify outliers or other points of interest.</p></li>
+<li><p><strong>Color:</strong> Color can be used to represent levels of a category.</p></li>
+<li><p><strong>Composition:</strong> Vertical or horizontal placement of the plots may be easier to compare depending on context.</p></li>
+</ul>
+</div>

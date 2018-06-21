@@ -1,0 +1,108 @@
+---
+title: "Spectrograms"
+author: "Christian Hower"
+date: "Spring, 2018"
+output: 
+  xaringan::moon_reader:
+    css: "robot-fonts"
+---
+
+# **Spectrograms** 
+### <span style="color:blue">How to read them and What to look for:</span>
+* A Spectrogram is used to visualize wave data
+* The purpose is to show how frequency content of a wave changes over time
+* It can be read like a heat map to look for temporal patterns in amplitude and frequency
+
+---
+# **Oscillogram** 
+* Audio files are typically represented as waves
+* Patterns observed in the wave file are retained in the spectrogram
+![](..\..\images\waveform.png)
+
+
+---
+
+![](.\images\spectrogram_808_LINEAR.png)
+
+---
+![](.\images\spectrogram_808_NOANNO.png)
+
+* **Scale:** Humans perceive pitch on a log scale. Scaling the y axis represents the frequency spectrum with psychoacoustic experience of drums.
+
+---
+
+![](.\images\EQ.jpg)
+
+--
+![](.\images\boombox.jpg)
+
+---
+![](.\images\boombox2.jpg)
+
+--
+![](.\images\boombox3.jpg)
+
+--
+![](.\images\boombox4.jpg)
+
+
+---
+![](.\images\spectrogram_808_NOANNO.png)
+* **Scale:** Humans perceive pitch on a log scale. Scaling the y axis represents the frequency spectrum consistently with psychoacoustics.
+
+
+---
+![](.\images\spectrogram_808.png)
+
+* **Annotation:** Annotation can be used to supplement the graph with event identification. Here I labeled the events at the beginning so the rhythm pattern can be better understood.
+
+---
+
+![](.\images\spectrogram_BBR.png)
+
+* **Change Drumset:** The pattern here is the same but played with a different virtual instrument. The smearing indicates these sounds had longer decay times than the 808 drumkit.
+
+---
+
+![](.\images\spectrogram_SM.png)
+
+* **Change Drumset:** The pattern here is the same but played with a different virtual instrument. The hi-hats were triggered with a lower velocity MIDI note so the event is very difficult to see. 
+
+
+---
+![](.\images\spectrogram_SM_SALMON.png)
+
+
+* **Color:** Color is a built in feature of a spectrogram. The color is used to encode the amplitude of each frequency. Here color is not needed for quantitative precision so much as a way of visually separating high amplitude moments and low amplitude moments.  
+
+---
+
+
+![](.\images\spectrogram_SM_OCEAN.png)
+
+
+* **Color:** Color is a built in feature of a spectrogram. The color is used to encode the amplitude of each frequency. Here color is not needed for quantitative precision so much as a way of visually separating high amplitude moments and low amplitude moments.  
+
+---
+
+
+![](.\images\spectrogram_SM_GAIA.png)
+
+
+* **Color:** Color is a built in feature of a spectrogram. The color is used to encode the amplitude of each frequency. Here color is not needed for quantitative precision so much as a way of visually separating high amplitude moments and low amplitude moments.  
+
+---
+![](.\images\spectrogram_BRR_GAIA_small.png)
+
+![](.\images\spectrogram_BBR_small.png)
+
+
+---
+![](.\images\spectroOsc.png)
+
+
+---
+
+d(-_-)b Thanks!
+
+

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spectrograms</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Christian Hower" />
+    <link href="slides_files/remark-css-0.0.1/robot-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Spectrograms
+### Christian Hower
+### Spring, 2018
+
+---
+
+
+# **Spectrograms** 
+### &lt;span style="color:blue"&gt;How to read them and What to look for:&lt;/span&gt;
+* A Spectrogram is used to visualize wave data
+* The purpose is to show how frequency content of a wave changes over time
+* It can be read like a heat map to look for temporal patterns in amplitude and frequency
+
+---
+# **Oscillogram** 
+* Audio files are typically represented as waves
+* Patterns observed in the wave file are retained in the spectrogram
+![](..\..\images\waveform.png)
+
+
+---
+
+![](.\images\spectrogram_808_LINEAR.png)
+
+---
+![](.\images\spectrogram_808_NOANNO.png)
+
+* **Scale:** Humans perceive pitch on a log scale. Scaling the y axis represents the frequency spectrum with psychoacoustic experience of drums.
+
+---
+
+![](.\images\EQ.jpg)
+
+--
+![](.\images\boombox.jpg)
+
+---
+![](.\images\boombox2.jpg)
+
+--
+![](.\images\boombox3.jpg)
+
+--
+![](.\images\boombox4.jpg)
+
+
+---
+![](.\images\spectrogram_808_NOANNO.png)
+* **Scale:** Humans perceive pitch on a log scale. Scaling the y axis represents the frequency spectrum consistently with psychoacoustics.
+
+
+---
+![](.\images\spectrogram_808.png)
+
+* **Annotation:** Annotation can be used to supplement the graph with event identification. Here I labeled the events at the beginning so the rhythm pattern can be better understood.
+
+---
+
+![](.\images\spectrogram_BBR.png)
+
+* **Change Drumset:** The pattern here is the same but played with a different virtual instrument. The smearing indicates these sounds had longer decay times than the 808 drumkit.
+
+---
+
+![](.\images\spectrogram_SM.png)
+
+* **Change Drumset:** The pattern here is the same but played with a different virtual instrument. The hi-hats were triggered with a lower velocity MIDI note so the event is very difficult to see. 
+
+
+---
+![](.\images\spectrogram_SM_SALMON.png)
+
+
+* **Color:** Color is a built in feature of a spectrogram. The color is used to encode the amplitude of each frequency. Here color is not needed for quantitative precision so much as a way of visually separating high amplitude moments and low amplitude moments.  
+
+---
+
+
+![](.\images\spectrogram_SM_OCEAN.png)
+
+
+* **Color:** Color is a built in feature of a spectrogram. The color is used to encode the amplitude of each frequency. Here color is not needed for quantitative precision so much as a way of visually separating high amplitude moments and low amplitude moments.  
+
+---
+
+
+![](.\images\spectrogram_SM_GAIA.png)
+
+
+* **Color:** Color is a built in feature of a spectrogram. The color is used to encode the amplitude of each frequency. Here color is not needed for quantitative precision so much as a way of visually separating high amplitude moments and low amplitude moments.  
+
+---
+![](.\images\spectrogram_BRR_GAIA_small.png)
+
+![](.\images\spectrogram_BBR_small.png)
+
+
+---
+![](.\images\spectroOsc.png)
+
+
+---
+
+d(-_-)b Thanks!
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create();
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
