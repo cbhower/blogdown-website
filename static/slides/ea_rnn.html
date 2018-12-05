@@ -16,6 +16,118 @@ class: center, middle, inverse, title-slide
 
 ---
 
+
+# **Evolving RNN's for Time Series Prediction** 
+### &lt;span style="color:blue"&gt;Model Tuning&lt;/span&gt;
+* Large number configurations given class
+* Hyperparameter choices important for performance
+* Evolutionary Algorithms can automate the search
+* 2 Learning Problems, 2 Levels
+* Individual level - Prediction problem
+* Population level - Search Problem 
+
+---
+
+# **Prediction Problem**
+### &lt;span style="color:blue"&gt;Data&lt;/span&gt;
+* Simulated time series data
+* Linear combination of 3 sin waves at 3 different scales
+* Random Uniform Noise
+
+---
+
+![](.\images\ea_rnn_simulated_data.jpg)
+
+---
+
+# **Prediction Problem** 
+### &lt;span style="color:blue"&gt;Model&lt;/span&gt;
+* LSTM
+* 3 layers
+* input layer &gt; hidden layer &gt; output layer 
+* Number of input nodes and hidden nodes learned by EA process
+* Error measured in RMSE
+
+---
+![](.\images\ea_rnn_training_loss.jpg)
+
+
+---
+# **Search Problem** 
+### &lt;span style="color:blue"&gt;Population Search&lt;/span&gt;
+* Model hyperparameters can be represented as a space
+* Many good solutions exist in space
+* Want to find best combination of simple and accurate
+i.e. find Fittest individual in population space
+
+---
+# **Search Problem** 
+### &lt;span style="color:blue"&gt;Evolutionary Algorithm&lt;/span&gt;
+* Fitness - based on model performance + penalty
+* Selection - based on fitness
+* Mating - Traits crossover with uniform probability
+* Mutation - individuals selcted unformly for mutation
+++ bits in genome mutate with uniform probability
+++ traits with longer bit encodings mutate with higher prob
+* Evaluation - Train model and assign fitness based on model performance
+
+---
+# **Search Problem**
+### &lt;span style="color:blue"&gt;Fitness&lt;/span&gt;
+* Fitness function is a critical part of EA
+* RMSE
+* RMSE + Complexity Penalty
+
+---
+# **Search Problem**
+### &lt;span style="color:blue"&gt;Complexity Penalty&lt;/span&gt;
+* Alpha is maximum penalty
+* Proportion of total nodes/nodes possible
+* add to rmse 
+* interaction between traits and environment
+
+---
+# **Complexity Penalty Experiment 1**
+### &lt;span style="color:blue"&gt;Overview&lt;/span&gt;
+* 6 generations
+* 5 individuals per generation
+* 30 total individual
+* 2048 possible in model space
+* 6% of model space explored per run
+* 20 training epochs
+
+---
+# **Complexity Penalty Experiment 1**  
+### &lt;span style="color:blue"&gt;Varying alpha&lt;/span&gt;
+* Encourages poulation search in different regions 
+* Model discovers statefulness property of LSTM?
+* Population == sublattice
+
+
+---
+![](.\images\ea_rnn_modelspace_alpha_search.jpg)
+
+---
+
+
+# **Complexity Penalty Experiment 2** 
+### &lt;span style="color:blue"&gt;Searching in a larger space&lt;/span&gt;
+* Add activation function at the output node to GA search
+* 8192 states
+* 10 generations
+* 8 individuals per generation
+* 80 total individual
+* .01 &gt; modelspace explored 
+
+---
+# **Complexity Penalty Experiment 2** 
+### &lt;span style="color:blue"&gt;Results&lt;/span&gt;
+* dropout selection?
+* LSTM statefulness property discovered?
+* train best models with more training epochs
+
+---
+![](.\images\ea_rnn_large_search.jpg)
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create();
