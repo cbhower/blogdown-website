@@ -2,5 +2,5 @@
 title = "Home"
 +++
 
-Welcome! This site is an e-portfolio comprised of my sample work from CS631: Principles of Data Visualization. Please explore some of the visualization examples by clicking the projects link.
+Welcome! This website is a portfolio of some of my machine machine learning and data science projects. Please explore examples of my work by clicking the PROJECTS link. See more detailed code examples by clicking the github icon below for a link to my repository.
 

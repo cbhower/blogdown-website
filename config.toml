@@ -7,7 +7,7 @@ languageCode = "en-US"
 layoutdir = "layouts"
 publishdir = "public"
 author = "Christian Hower"
-title = "Data Vis Exploratorium"
+title = "  Web Portfolio"
 disqusshortname = ""
 pluralizelisttitles = false
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
@@ -19,7 +19,7 @@ enableEmoji = true
 [params]
 dateform = "Jan 2, 2006"
 dateformfull = "Mon Jan 2 2006 15:04:05 MST"
-description = "Example blog"
+description = "machine learning and data science web portfolio"
 copyright = "Copyright © 2018 Christian Hower"
 # copyrightUrl = "https://creativecommons.org/licenses/by-sa/4.0/"
 logofile = "img/logo.jpg"
