@@ -1,0 +1,8 @@
+---
+title: "Evolving Recurrent Neural Network Topologies"
+author: "Christian Hower"
+date: "Fall, 2018"
+output: 
+  xaringan::moon_reader:
+    css: "robot-fonts"
+---
